@@ -1,0 +1,51 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	width: 100%;
+	background: url('../img/Background Flipkart.jpg') no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100vh;
+}
+
+.sell_logo{
+	
+	background-image: url('../img/logo-vector.gif');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 10vh 7%;
+	background-size: 17% 30vh;
+}
+
+.main_sell{
+	margin-bottom: 0px !important;
+}
+
+.sell_form{
+	
+}
+
+.other_input{
+	display: none;
+}
+
+.dropdown-content{
+	height: 40vh;
+}
+
+.picker__table{
+	display: none;
+}
+
+
+.picker__calendar-container{
+	height: 40px;
+}
+
+.picker__day-display{
+	display: none;
+}
+
+
