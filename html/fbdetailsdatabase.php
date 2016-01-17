@@ -1,5 +1,6 @@
 <?php
 	require 'connect.php';
+	session_start();
 	if(isset($_POST['fb_id']) && isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['link']) && isset($_POST['gender'])){
 		
 			$fb_id = mysqli_real_escape_string($con, $_POST['fb_id']);
@@ -16,6 +17,7 @@
 					
 					$queryinsert= "INSERT INTO users VALUES('','$fb_id','$first_name','$last_name','$link','$gender')";
 					if(mysqli_query($con, $queryinsert)){
+						$_SESSION['fb_id']=$fb_id;
 						$query_buynary= "SELECT * FROM users_buynary WHERE fb_id= '$fb_id'";
 						$query_buynary_run= mysqli_query($con, $query_buynary);
 						if(mysqli_num_rows($query_buynary_run)==0){
@@ -27,6 +29,7 @@
 						
 					}
 				}else{
+					$_SESSION['fb_id']=$fb_id;
 					$query_buynary= "SELECT * FROM users_buynary WHERE fb_id= '$fb_id'";
 					$query_buynary_run= mysqli_query($con, $query_buynary);
 					if(mysqli_num_rows($query_buynary_run)==0){

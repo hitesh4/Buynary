@@ -44,7 +44,8 @@ $(document).ready(function(){
     FB.init({
       appId      : '536170429887636',
       xfbml      : true,
-      version    : 'v2.5'
+      version    : 'v2.5',
+      cookie	 : true
     });
   };
 

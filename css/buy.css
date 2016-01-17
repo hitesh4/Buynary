@@ -1,0 +1,55 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.logo{
+	margin-top: 10px;
+	margin-left: 32px;
+}
+
+.opacity{
+	background-color: rgba(255,255,255,0.3);
+	color: black;
+}
+
+.nav-wrapper ul li a{
+	color: black;
+	font-family: 'impact';
+	font-size: 1.6vw;
+}
+
+
+.list{
+	width: 50%;
+}
+
+.list li{
+	width: 25%;
+	text-align: center;
+	
+}
+
+.slider{
+	width: 100%;
+	
+}
+
+img{
+	background-repeat: no-repeat; 
+}
+
+.items{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 0px !important;
+}
+
+/*.buy_head{
+	text-align: center;
+}
+
+.buy_descp{
+	text-align: center;
+}
+*/

@@ -15,33 +15,41 @@
 			</div>
 			<div class="col s8 m8 sell_form">
 				<div class="row">
-				    <form class="col s12">
+				    <form class="col s12" action="sell_item.php" method="POST" enctype='multipart/form-data'>
 				      <div class="row">
 				         <div class="input-field col s12">
-						    <select id="myselect">
+						    <select id="item_list" name="item">
 						      <option value="" disabled selected>Choose your option</option>
-						      <option value="1">Book</option>
-						      <option value="2">Mobile</option>
-						      <option value="3">Tablet</option>
-						      <option value="4">Laptop</option>
-						      <option value="5">Headphones</option>
-						      <option value="6">Charger</option>
-						      <option value="7">Powerbank</option>
-						      <option value="8">Cycle</option>
-						      <option value="9">Camera</option>
-						      <option value="10">Calculator</option>
-						      <option value="11">Furniture</option>
-						      <option value="12">Sports Equipment</option>
-						      <option value="13">Musical Instrument</option>
-						      <option value="4" class="other">Other</option>
+						      <option value="Book">Book</option>
+						      <option value="Mobile">Mobile</option>
+						      <option value="Tablet">Tablet</option>
+						      <option value="Laptop">Laptop</option>
+						      <option value="Headphones">Headphones</option>
+						      <option value="Charger">Charger</option>
+						      <option value="Powerbank">Powerbank</option>
+						      <option value="Cycle">Cycle</option>
+						      <option value="Camera">Camera</option>
+						      <option value="Calculator">Calculator</option>
+						      <option value="Furniture">Furniture</option>
+						      <option value="Sports Equipment">Sports Equipment</option>
+						      <option value="Musical Instrument">Musical Instrument</option>
+						     <!-- here -->
+						      <option value="Other">Other</option>
 						    </select>
 						    <label>Materialize Select</label>
 						  </div>
 				       </div>
+				       <div class="row other" style="display:none;">
+			       			<div class="input-field col s12">
+				       			<i class="material-icons prefix">account_circle</i>
+				       			<input id="icon_price" type="text" class="validate" name="other_item">
+				       			<label for="icon_price">Other</label>
+			       			</div>
+				       </div>
 				       <div class="file-field input-field">
 					      <div class="btn">
 					        <span>Please Upload the Picture of the Product</span>
-					        <input type="file" accept="image/*">
+					        <input type="file" accept="image/*" name="uploaded_image[]" multiple>
 					      </div>
 					      <div class="file-path-wrapper">
 					        <input class="file-path validate" type="text">
@@ -50,66 +58,66 @@
 					    <div class="row">
 					        <div class="input-field col s12">
 					          <i class="material-icons prefix">account_circle</i>
-					          <input id="icon_price" type="text" class="validate">
+					          <input id="icon_price" type="text" class="validate" name="offered_price">
 					          <label for="icon_price">What is the price that you are offering?</label>
 					        </div>
         				</div>
         				<div class="row">
 					        <div class="input-field col s12">
 					          <i class="material-icons prefix">account_circle</i>
-					          <input id="icon_m_price" type="text" class="validate">
+					          <input id="icon_m_price" type="text" class="validate" name="market_price">
 					          <label for="icon_m_price">What is the market price of the product?</label>
 					        </div>
         				</div>
         				<div class="row">
         					<div class="input-field col s4">
-							    <select>
+							    <select name="month">
 							      <option value="" disabled selected>Month</option>
-							      <option value="1">Jan</option>
-							      <option value="2">Feb</option>
-							      <option value="3">March</option>
-							      <option value="4">April</option>
-							      <option value="5">May</option>
-							      <option value="6">June</option>
-							      <option value="7">July</option>
-							      <option value="8">August</option>
-							      <option value="9">September</option>
-							      <option value="10">October</option>
-							      <option value="11">November</option>
-							      <option value="12">December</option>
+							      <option value="Jan">Jan</option>
+							      <option value="Feb">Feb</option>
+							      <option value="March">March</option>
+							      <option value="April">April</option>
+							      <option value="May">May</option>
+							      <option value="June">June</option>
+							      <option value="July">July</option>
+							      <option value="August">August</option>
+							      <option value="September">September</option>
+							      <option value="October">October</option>
+							      <option value="November">November</option>
+							      <option value="December">December</option>
 							    </select>
 							    <label>How old is the product?</label>
 							</div>
 							<div class="input-field col s4">
-							    <select>
+							    <select name="year">
 							      <option value="" disabled selected>Year</option>
-							      <option value="1">1990</option>
-							      <option value="2">1991</option>
-							      <option value="3">1992</option>
-							      <option value="3">1993</option>
-							      <option value="3">1994</option>
-							      <option value="3">1995</option>
-							      <option value="3">1996</option>
-							      <option value="3">1997</option>
-							      <option value="3">1998</option>
-							      <option value="3">1999</option>
-							      <option value="3">2000</option>
-							      <option value="3">2001</option>
-							      <option value="3">2002</option>
-							      <option value="3">2003</option>
-							      <option value="3">2004</option>
-							      <option value="3">2005</option>
-							      <option value="3">2006</option>
-							      <option value="3">2007</option>
-							      <option value="3">2008</option>
-							      <option value="3">2009</option>
-							      <option value="3">2010</option>
-							      <option value="3">2011</option>
-							      <option value="3">2012</option>
-							      <option value="3">2013</option>
-							      <option value="3">2014</option>
-							      <option value="3">2015</option>
-							      <option value="3">2016</option>
+							      <option value="1990">1990</option>
+							      <option value="1991">1991</option>
+							      <option value="1992">1992</option>
+							      <option value="1993">1993</option>
+							      <option value="1994">1994</option>
+							      <option value="1995">1995</option>
+							      <option value="1996">1996</option>
+							      <option value="1997">1997</option>
+							      <option value="1998">1998</option>
+							      <option value="1999">1999</option>
+							      <option value="2000">2000</option>
+							      <option value="2001">2001</option>
+							      <option value="2002">2002</option>
+							      <option value="2003">2003</option>
+							      <option value="2004">2004</option>
+							      <option value="2005">2005</option>
+							      <option value="2006">2006</option>
+							      <option value="2007">2007</option>
+							      <option value="2008">2008</option>
+							      <option value="2009">2009</option>
+							      <option value="2010">2010</option>
+							      <option value="2011">2011</option>
+							      <option value="2012">2012</option>
+							      <option value="2013">2013</option>
+							      <option value="2014">2014</option>
+							      <option value="2015">2015</option>
+							      <option value="2016">2016</option>
 
 							    </select>
 							    <label></label>
@@ -118,18 +126,18 @@
         				<div class="row">
 					        <div class="input-field col s12">
 					          <i class="material-icons prefix">account_circle</i>
-					          <input id="icon_link" type="text" class="validate">
+					          <input id="icon_link" type="text" class="validate" name="link">
 					          <label for="icon_link">Can you provide the link to the product on a ecommerce website.</label>
 					        </div>
         				</div>
         				<div class="row">
         					<label class="col" style="font-size:16px;">Is the price negotiable?</label>
         					<p class="col">
-						      <input name="group1" type="radio" id="test1" />
+						      <input name="negotiable" value="Yes" type="radio" id="test1" />
 						      <label for="test1">Yes</label>
 						    </p>
 						    <p class="col">
-						      <input name="group1" type="radio" id="test2" />
+						      <input name="negotiable" value="No" type="radio" id="test2" />
 						      <label for="test2">No</label>
 						    </p>
         				</div>
@@ -147,5 +155,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="../css/materialize/js/materialize.min.js"></script> 
 <script type="text/javascript" src="../js/sell.js"></script>
+<script type="text/javascript">
+	$('#item_list').change(function(){
+		var optional= $(this).val();
+		if(optional=='Other'){
+			$('.other').show();
+		}else{
+			$('.other').hide();
+		}
+	});	
+</script>
 </body>
 </html>
