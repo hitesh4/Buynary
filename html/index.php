@@ -18,7 +18,7 @@
 		<div class="main">
 			<a  class="modal-trigger check" href="#modal1">
 
-				<div class="buy" onclick="fblogin();"></div>
+				<div class="buy" onclick="fblogin('buy');"></div>
 
 			</a>	
 				<div id="modal1" class="modal">
@@ -32,7 +32,7 @@
 				
 			
 			<a  class="modal-trigger check" href="#modal1">
-				<div class="sell" onclick="fblogin();"></div>
+				<div class="sell" onclick="fblogin('sell');"></div>
 			</a>
 			<div class="navbar_dec">
 				<div class="navbar-fixed">
@@ -94,22 +94,7 @@
 		</div>
 		<div class="connect">
 			<div class="two_connect">
-				<div class="connect_title">
-					<div class="text">
-						CONNECT WITH US
-					</div>
-					<div class="line">
-						
-					</div>
-					<div class="small_line">
-						
-					</div>
-				</div>
-				<div class="connect_content">
-					Lorem Ipsum is simply dummy text of the printing and 
-					typesetting industry. Lorem Ipsum has been the industry's.
-				</div>
-				<div class="row">
+				<div class="row" style="padding-top:25vh;">
 			    <form class="col s6">
 			    <div class="row">
 			      <div class="input-field col s12">

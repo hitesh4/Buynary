@@ -10,6 +10,7 @@ $(document).ready(function(){
       complete: function() {  } // Callback for Modal close
     }
   );
+	      $(".button-collapse").sideNav();
 
 // 	  $(document).ajaxSuccess(function() {
 //   alert("An individual AJAX call has completed successfully");
@@ -49,9 +50,9 @@ $(document).ready(function(){
     });
   };
 
-	// FB.Event.subscribe('auth.login', function () {
- //          window.location = "sell.php";
- //      });
+	FB.Event.subscribe('auth.login', function () {
+         window.location="index.php";
+      });
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
@@ -66,7 +67,7 @@ $(document).ready(function(){
 });
 
 
-function fblogin() {
+function fblogin(div) {
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
         $('.check').removeClass('modal-trigger');
@@ -88,9 +89,20 @@ function fblogin() {
 		    	success	:function(data){
 		    		console.log(data);
 		    		if(data=='true'){
-		    			$(location).attr('href','user_buynary.php');
+		    			//$(location).attr('href','user_buynary.php');
+		    			window.location='user_buynary.php';
+
 		    		}else{
-		    			$(location).attr('href','sell.php');
+		    			// $(location).attr('href','sell.php');
+		    			if(div == 'buy'){
+		    				$(location).attr('href','buyhome/buy.php');
+		    			}else{
+		    				$(location).attr('href','sell.php');
+		    			}
+		    			
+		    			//$('.sell').click({
+		    				//window.location='sell.php';
+		    			//});
 		    		}
 
 		    	} 
@@ -117,7 +129,13 @@ function fblogin() {
 		    	data	:'fb_id='+fb_id+'&first_name='+first_name+'&last_name='+last_name+'&link='+link+'&gender='+gender,
 		    	success	:function(data){
 		    		console.log(data);
-		    		
+        //  			if(data=='false'){
+		    		// 	$(location).attr('href','user_buynary.php');
+		    		// 	//window.location='user_buynary.php';
+		    		// }else{
+		    		// 	$(location).attr('href','sell.php');
+		    		// 	//window.location='sell.php';
+		    		// }	
 		    	} 
 		    });
 
@@ -139,7 +157,13 @@ function fblogin() {
 		    	data	:'fb_id='+fb_id+'&first_name='+first_name+'&last_name='+last_name+'&link='+link+'&gender='+gender,
 		    	success	:function(data){
 		    		console.log(data);
-		    		
+		    		// if(data=='true'){
+		    		// 	$(location).attr('href','user_buynary.php');
+		    		// 	//window.location='user_buynary.php';
+		    		// }else{
+		    		// 	$(location).attr('href','sell.php');
+		    		// 	//window.location='sell.php';
+		    		// }
 		    	} 
 		    });
 

@@ -21,7 +21,7 @@
 
 	$fb_id= $_SESSION['fb_id'];
 	if(isset($_POST['item']) && isset($_POST['other_item']) && isset($_FILES["uploaded_image"]) && isset($_POST['offered_price']) && isset($_POST['market_price']) && isset($_POST['month']) && isset($_POST['year']) && isset($_POST['link']) && isset($_POST['negotiable'])){
-		if($_POST['item']=='other'){
+		if($_POST['item']=='Other'){
 			if(!empty($_POST['other_item'])){
 				$other_item= $_POST['other_item'];
 			}
@@ -42,53 +42,88 @@
 				$allowed_type= array('image/jpg','image/jpeg','image/pjpeg','image/gif','image/png','image/x-png','image/bmp');
 				$count= count($uploaded_image['name']);
 				$count_moved=0;
-				echo 'a';
-				for ($i=0; $i < $count; $i++) { 
-					$ext= array();
-					$type= array();
-					$tmp_name= array();
+				//echo 'a';
+				$target_path= array();
+				$type= array();
+				$tmp_name= array();
+				for ($i=0; $i < $count; $i++) { 					
 					$ext= explode('.', $uploaded_image['name'][$i]);
 					$last_ext= end($ext);
 					$type[$i]= $uploaded_image['type'][$i];
 					$tmp_name[$i]= $uploaded_image['tmp_name'][$i];
-					echo $last_ext;
+					
 					if(in_array($last_ext, $allowed_ext) && in_array($type[$i], $allowed_type)){
-						$imagename= $fb_id.date('H:i:s-d-m-Y').'.'.$ext[$i];
-						$target_path= array();
+						$imagename= $fb_id.date('H-i-s-d-m-Y').'.'.$last_ext;
 						$target_path[$i]= getcwd().'\img'.'\\'.$imagename;
-						echo '1';
+						
 						if(move_uploaded_file($tmp_name[$i], $target_path[$i])){
 							$count_moved++;
-							echo '2';
+							
 						}
 					}
 				}
 			}if($count_moved==$count){
 				$uploaded_image_all= implode(',', $target_path);
-				$query="INSERT INTO items_basic (id, fb_id, item, other_item, uploaded_image, offered_price, market_price, month, year, link, negotiable)
-					 VALUES  ('','$fb_id','$item','other_item,'$uploaded_image_all','$offered_price','$market_price','$month','$year','$link','$negotiable')";
-				if(mysqli_query($con,$query)){
+				$query="INSERT INTO items_basic (prod_id, fb_id, item, other_item, uploaded_image, offered_price, market_price, month, year, link, negotiable) VALUES  ('','$fb_id','$item','$other_item','$uploaded_image_all','$offered_price','$market_price','$month','$year','$link','$negotiable')";
+				$query_run = mysqli_query($con,$query);
+
+				if($query_run){
 					echo "Congratulations item added";
+					$_SESSION['prod_id']=mysqli_insert_id($con);
+					$_SESSION['item']= $item;
+
+					switch ($item) {
+						case 'Book':
+							header('Location: book.php');
+							break;
+						case 'Mobile':
+							header('Location: mobile,tablet.php');
+							break;
+						case 'Tablet':
+							header('Location: mobile,tablet.php');
+							break;
+						case 'Laptop':
+							header('Location: laptop.php');
+							break;
+						case 'Headphones':
+							header('Location: headphones.php');
+							break;
+						case 'Charger':
+							header('Location: headphones.php');
+							break;
+						case 'Powerbank':
+							header('Location: headphones.php');
+							break;
+						case 'Cycle':
+							header('Location: cycles.php');
+							break;
+						case 'Camera':
+							header('Location: headphones.php');
+							break;
+						case 'Calculator':
+							header('Location: headphones.php');
+							break;
+						case 'Furniture':
+							header('Location: furniture.php');
+							break;
+						case 'Sports Equipment':
+							header('Location: sportsequipment.php');
+							break;
+						case 'Musical Instrument':
+							header('Location: musicalinstruments.php');
+							break;
+						case 'Other':
+							header('Location: others.php');
+							break;
+									
+					}
 				}else{
-					echo "Item couldn't be added to database";
+					echo mysqli_error($con);
 				}
 			}
 		}
 	}else{
-		echo $_FILES['uploadedimage']['name'];
-		echo "string";
+		
 	}
 	
-
-
-// print_r($_FILES);
-// echo $_FILES['uploaded_image']['name'];
-// if(isset($_FILES['uploaded_image']) && !empty($_FILES['uploaded_image'])){
-// 	if(http_upload())
-// 		echo "yes";
-	
-	
-// }else{
-// 	echo "string";
-// }
 ?>
