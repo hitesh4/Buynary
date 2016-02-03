@@ -1,3 +1,7 @@
+<?php
+include 'checker_buy.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,3 +1,8 @@
+<?php
+include 'checker_buy.php';
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,20 +72,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="items">
-			<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-				<div id="modal1" class="modal">
-				<div class="modal-content">
-      			<h4>Modal Header</h4>
-      			<p>A bunch of text</p>
-   				 </div>
-			    <div class="modal-footer">
-			      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-			    </div>
-				</div>
-			</div>
-		</div>
+		<span id="check">hvhvhjvhjv</span>
+		<div class="check_item"></div>
+		<?php include 'check_modal.php';?>
 	</div>
 </body>
 <!-- <script src="http://connect.facebook.net/en_US/all.js"></script> -->

@@ -54,9 +54,9 @@
 					
 					if(in_array($last_ext, $allowed_ext) && in_array($type[$i], $allowed_type)){
 						$imagename= $fb_id.date('H-i-s-d-m-Y').'.'.$last_ext;
-						$target_path[$i]= getcwd().'\img'.'\\'.$imagename;
-						
-						if(move_uploaded_file($tmp_name[$i], $target_path[$i])){
+						$target_path[$i]= $imagename;
+						$loc = getcwd().'\img'.'\\'.$imagename;;
+						if(move_uploaded_file($tmp_name[$i], 'img'.'\\'.$target_path[$i])){
 							$count_moved++;
 							
 						}
@@ -75,6 +75,7 @@
 					switch ($item) {
 						case 'Book':
 							header('Location: book.php');
+							//echo $loc;
 							break;
 						case 'Mobile':
 							header('Location: mobile,tablet.php');

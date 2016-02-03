@@ -1,4 +1,7 @@
 <!-- database same as furniture -->
+<?php
+include 'checker_sell.php';
+?>
 
 <!DOCTYPE html>
 <html>
