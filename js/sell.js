@@ -1,6 +1,7 @@
  $(document).ready(function() {
-    var sell_form = $('.sell_form').height();
+    var sell_form = $('.sell_form').position().top();
     $('.sell_logo').css('height',sell_form);
+    console.log(sell_form);
     $('select').material_select(); 
     $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month

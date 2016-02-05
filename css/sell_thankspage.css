@@ -1,0 +1,35 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper{
+	width: 100%;
+	height: 100vh;
+	background: url('../img/Thank-you2.jpg');
+	background-size: 100% 100vh;
+}
+
+.content{
+	color: #FFC400;
+}
+
+.content{
+	padding-left: 20px;
+}
+
+.content p{
+
+}
+
+.logo{
+	margin: auto;
+	padding-top: 30px;
+	width: 150px;
+	height: 150px;
+}
+
+.logo_img{
+	width: 150px;
+	height: 150px;
+}

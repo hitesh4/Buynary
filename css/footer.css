@@ -1,0 +1,41 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+
+@font-face {
+    font-family: 'lato';
+    src:url('../font/Lato-Black.ttf');
+}
+
+.footer{
+	height: 20vw;
+	background: #272727;
+}
+
+.bigbox{
+	width: 80vw;
+	margin: auto;
+}
+
+.footer_boxes{
+	width: 20vw;
+	height: 20vw;
+	padding-top: 6vw !important;
+	text-align: center;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	color: #808080;
+	font-family: 'lato';
+}
+
+a{
+	text-decoration: none;
+	color: #808080;
+	-webkit-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+a:hover{
+	color: #FC6D6D;
+}

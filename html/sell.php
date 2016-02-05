@@ -40,11 +40,13 @@ if(isset($_SESSION['fb_id'])){
 </head>
 <body>
 	<div class="wrapper">
+		<?php  include 'form_nav.php'; ?>
 		<div class="row main_sell">
-			<div class="col s4 m4 sell_logo">
+			<div class="col s3 sell_logo card">
 				
 			</div>
-			<div class="col s8 m8 sell_form">
+
+			<div class="col s9 sell_form z-depth-4">
 				<div class="row">
 				    <form class="col s12" action="sell_item.php" method="POST" enctype='multipart/form-data'>
 				      <div class="row">
@@ -182,6 +184,7 @@ if(isset($_SESSION['fb_id'])){
 			  </div>
 			</div>
 		</div>
+		<?php include 'footer.php'; ?>
 	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="../css/materialize/js/materialize.min.js"></script> 

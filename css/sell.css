@@ -16,9 +16,8 @@ body{
 	
 	background-image: url('../img/logo-vector.gif');
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: 10vh 7%;
-	background-size: 17% 30vh;
+	background-position: 7vh 18%;
+	background-size: 15vw 15vw;
 }
 
 .main_sell{

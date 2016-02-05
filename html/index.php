@@ -8,7 +8,14 @@
       rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="http://connect.facebook.net/en_US/all.js"></script>
-
+      <script type="text/javascript">
+  //     	FB.getLoginStatus(function(response) {
+		// 	if(response.status === 'connected'){
+		// 		$('.loginstatus').html('jbj');
+		// 	}
+		// },true);
+									
+      </script>
 	       
 </head>
 <body>
@@ -34,30 +41,7 @@
 			<a  class="modal-trigger check" href="#modal1">
 				<div class="sell" onclick="fblogin('sell');"></div>
 			</a>
-			<div class="navbar_dec">
-				<div class="navbar-fixed">
-					<nav class="opacity">
-						<div class="nav-wrapper">
-								<a href="#" class="brand-logo logo">
-									<img src="../img/logo-vector.gif" width="50px" height="50px">
-								</a>
-							<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-						      <ul class="right hide-on-med-and-down list">
-						        <li><a href="#">HOME</a></li>
-						        <li><a href="#">ABOUT US</a></li>
-						        <li><a href="#">HOW IT WORKS</a></li>
-						        <li><a href="#">CONTACT US</a></li>
-						      </ul>
-						      <ul class="side-nav" id="mobile-demo">
-						        <li><a href="#">HOME</a></li>
-						        <li><a href="#">ABOUT US</a></li>
-						        <li><a href="#">HOW IT WORKS</a></li>
-						        <li><a href="#">CONTACT US</a></li>
-						      </ul>	
-						</div>
-					</nav>
-				</div>
-			</div>
+			<?php include 'navbar.php'; ?>
 		</div>
 		<div class="wwh">
 			<div class="one">
@@ -136,6 +120,7 @@
 			</div>
 		</div>
 	</div>
+	<?php include 'footer.php'; ?>
 </div>	
 </body>
 <script type="text/javascript" src="../js/index.js"></script> 
